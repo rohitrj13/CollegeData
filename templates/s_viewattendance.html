@@ -1,0 +1,39 @@
+{% extends 'base_student.html' %}
+{% block title %}View Attendance{% endblock title %}
+{% block content %}
+<div class="container">
+<div class="card mt-4 ml-4">
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered table-hover">
+<thead>
+<tr>
+<th>Code</th>
+<th>Course</th>
+<th>Total Classes</th>
+<th>Classes Attended</th>
+<th>Attendance</th>
+</tr></thead>
+<tbody>
+{% for i in att_total %}
+<tr>
+<td>{{ i.course }}</td>
+<td>{{ i.course.name }}</td>
+<td>{{i.total_classes}}</td>
+<td>{{i.classes_attended}}</td>
+{% if i.attendance_percentage >= 75 %}
+<td class="bg-success">{{i.attendance_percentage}}%</td>
+{% elif i.total_classes == 0 %}
+<td class="bg-success">{{i.attendance_percentage}}%</td>
+{% else %}
+<td class="bg-danger">{{i.attendance_percentage}}%</td>
+{% endif %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+{% endblock content %}

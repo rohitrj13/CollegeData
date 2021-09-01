@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}login
+{% endblock title %}
+{% block content %}
+<style>
+body{
+    background: #6A555B;
+}
+</style>
+<div class="container">
+        <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button  class="btn btn-success" type="submit">Login</button>
+            </form>
+</div>
+{% endblock content %}

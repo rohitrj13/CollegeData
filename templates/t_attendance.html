@@ -1,0 +1,42 @@
+{% extends 'base_teacher.html' %}
+{% block title %}Attendance{% endblock title %}
+{% block content %}
+<div class="container">
+<div class="text-black" style="font-size:40px;"><h1>List Of Classes</h1></div>
+<div class="card  mt-2">
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-hover table-bordered table-dark">
+  <thead>
+    <tr>
+      
+      <th scope="col">Class</th>
+      <th scope="col">Course</th>
+      <th scope="col">Code</th>
+      
+      <th scope="col"></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+{% for i in ass %}
+<tr>
+
+<td>{{ i.class_id }}</td>
+<td>{{ i.course }}</td>
+<td>{{ i.course_id}} </td>
+<td><a href="{% url 't_attendanceclasses' i.id  %}" style="color:white;"><button type="button" class="btn btn-light">Enter Attendance</button></a>&nbsp;&nbsp;
+<a href="#"><button type="button" class="btn btn-light">Extra Class</button></a>&nbsp;&nbsp;
+<a href="#"><button type="button" class="btn btn-light">View Students</button></a>
+</td>
+
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+{% endblock content %}

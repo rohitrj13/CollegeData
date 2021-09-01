@@ -1,0 +1,33 @@
+{% extends 'base_teacher.html' %}
+{% block title %}Select Class{% endblock title %}
+
+{% block content %}
+
+<div class="container-fluid">
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Class</th>
+      <th scope="col">Subject</th>
+      <th scope="col"></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    {% for i in teacher.assign_set.all %}
+    <tr>
+      <td>{{i.class_id_id}}</td>
+      <td>{{i.course}}</td>
+      <td><a href="{% url 't_examselect' i.id %}">Enter Marks</a></td>
+      
+    </tr>
+    {% empty %}
+    <p>Student has no course</p>
+    {% endfor %}
+
+  </tbody>
+</table>
+</div>
+
+{% endblock content %}

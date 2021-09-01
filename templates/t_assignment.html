@@ -1,0 +1,22 @@
+{% extends 'base_teacher.html' %}
+{% block title %}Assignment{% endblock title %}
+{% block content %}
+<div class="container my-4">
+<table class="table table-bordered table-hover">
+<thead>
+<th>Class</th>
+<th></th>
+</thead>
+<tbody>
+{% for i in teacher.assign_set.all %}
+<tr>
+<td>{{i.class_id}} </td>
+<td><a class="btn btn-primary">Upload</a></td>
+
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock content %}

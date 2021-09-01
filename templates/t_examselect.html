@@ -1,0 +1,36 @@
+{% extends 'base_teacher.html' %}
+{% block title %}Select Exam{% endblock title %}
+
+{% block content %}
+
+<table class="table table-hover table-dark ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Exam</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+{% for i in ass.marks_set.all %}
+     <tr>
+      <th scope="row"></th>
+      <td>{{i.examname}}</td>
+            {% if i.status == '0' %}
+            <td><a href="{% url 't_entermarks' i.id  %}" style="color:orange;">Enter Marks</a></td>
+            {% else %}
+            <td><a href="{% url 't_editmarks' i.id %}">Edit Marks</a></td>
+            {% endif %}
+      <td></td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+    
+
+
+
+
+
+{% endblock content %}

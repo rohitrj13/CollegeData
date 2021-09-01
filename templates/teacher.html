@@ -1,0 +1,51 @@
+{% extends 'base_teacher.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+{% load static %}
+<style>
+.card{
+    float:left;
+    margin-left:20px;
+    margin-top:100px;
+}
+img{
+    width:40px;
+    height:180px;
+}
+</style>
+<div class="container-fluid">
+<div class="card" style="width: 18rem;margin-left:100px;">
+  <img src='{% static "images/attendance.jpg"%}' class="card-img-top" alt="...">
+  <div class="card-body" href="#">
+    <h5 class="card-title">Enter Attendance</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 't_attendance' %}" class="btn btn-primary">Enter Attendance</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src='{% static "images/marks.jpg"%}' class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Enter marks</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 't_marks' request.user.teacher.id %}" class="btn btn-primary">Enter Marks</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src='{% static "images/assignment.jpg"%}' class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Assignmnet Questions</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="{% url 't_assignment' %}" class="btn btn-primary">Upload</a>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock content %}
