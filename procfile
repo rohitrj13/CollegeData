@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn collegedata.wsgi --log-file -
+web: gunicorn clgg.wsgi --log-file -
