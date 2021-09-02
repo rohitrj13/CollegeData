@@ -79,10 +79,20 @@ WSGI_APPLICATION = 'clgg.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd3g11ebnso5hp3',
+        'USER':'mnniquznihqrzg',
+        'PASSWORD': 'afd24b9e9117422301845bec22426a4baa914c5a5c005f496ec773052c82dcf9',
+        'HOST':'ec2-44-196-170-156.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
 
@@ -123,8 +133,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,"static")
+STATIC_URL = '/static/'
 django_heroku.settings(locals())
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static")
